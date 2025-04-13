@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: currency-exchange-service
+currency-exchanger:
+  config:
+    exchange-rate:
+      api-url: https://v6.exchangerate-api.com/v6/${currency-exchanger.config.exchange-rate.api-key}
+      api-key: ad53a35724ec5af7ba2783a1
+      endpoint:
+        pair-conversion: /pair
