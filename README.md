@@ -51,8 +51,7 @@ curl --location 'http://localhost:8080/api/calculate' \
     "targetCurrency": "PKR"
 }'
 
-**Sample Response:**
-39701.04382324219
+Sample Response: 39701.04382324219
 ---
 **Assumptions**
 - One point in implementation states that: **For every $100 on the bill, there is a $5 discount.**. But as we are implementing a currency exchange service, using the dollar sign here is somewhat irrelevant.
