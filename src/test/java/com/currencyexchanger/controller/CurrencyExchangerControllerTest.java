@@ -1,5 +1,6 @@
 package com.currencyexchanger.controller;
 
+import com.currencyexchanger.configuration.SecurityConfig;
 import com.currencyexchanger.domain.request.BillDetailsRequest;
 import com.currencyexchanger.service.CurrencyExchangerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,16 +9,20 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.user;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
 @WebMvcTest(CurrencyExchangerController.class)
+@Import(SecurityConfig.class)
 class CurrencyExchangerControllerTest {
 
     @Autowired
@@ -43,6 +48,7 @@ class CurrencyExchangerControllerTest {
                 .thenReturn(expectedResponse);
 
         mockMvc.perform(post("/api/calculate")
+                        .with(user("huzaifa.waseem").password("temp123"))
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(request)))
                 .andExpect(status().isOk())
