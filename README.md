@@ -62,7 +62,7 @@ curl --location 'http://localhost:8080/api/calculate' \
 ---
 **UML Diagram**
 
-- 
+- https://github.com/huxaifaw/Currency-Exchanger/blob/main/UML-Diagram.png
 ---
 **Running the Service**
 
