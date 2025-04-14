@@ -72,5 +72,7 @@ curl --location 'http://localhost:8080/api/calculate' \
 - username: huzaifa.waseem
 - password: temp123
 ---
-**Running the Service**
-
+**Running the Service (Bonus)**
+- Build the project: mvn clean install
+- For getting java code coverage report: mvn verify jacoco:report
+- For getting sonarqube report: mvn sonar:sonar
