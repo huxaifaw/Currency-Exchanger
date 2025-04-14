@@ -19,5 +19,5 @@ public class ExchangeRateApiResponseDTO {
     @JsonProperty("target_code")
     private String targetCode;
     @JsonProperty("conversion_rate")
-    private float conversionRate;
+    private double conversionRate;
 }

@@ -12,6 +12,8 @@ import com.currencyexchanger.exceptions.CurrencyConversionException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class CurrencyExchangerService {
@@ -46,6 +48,10 @@ public class CurrencyExchangerService {
         }
         if (request.getUserType() == null || request.getUserType().isEmpty()) {
             throw new CurrencyConversionException("User Type can't be null or empty");
+        }
+        Optional<UserType> userTypeOptional = UserType.fromString(request.getUserType());
+        if (userTypeOptional.isEmpty()) {
+            throw new CurrencyConversionException("Invalid user type provided");
         }
     }
 
