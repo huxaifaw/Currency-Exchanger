@@ -1,6 +1,10 @@
 spring:
   application:
     name: currency-exchange-service
+  security:
+    user:
+      name: huzaifa.waseem
+      password: temp123
 currency-exchanger:
   config:
     exchange-rate:

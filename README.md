@@ -28,6 +28,8 @@
 
 curl --location 'http://localhost:8080/api/calculate' \
 --header 'Content-Type: application/json' \
+--header 'Authorization: ••••••' \
+--header 'Cookie: JSESSIONID=3F2D4D3F6AA0DAD436FF6EF97F3E344C' \
 --data '{
 "items": [
     {
@@ -63,6 +65,12 @@ curl --location 'http://localhost:8080/api/calculate' \
 **UML Diagram**
 
 - https://github.com/huxaifaw/Currency-Exchanger/blob/main/UML-Diagram.png
+---
+**Authentication and Authorization**
+
+- I have implemented basic auth to the /api/calculate endpoint
+- username: huzaifa.waseem
+- password: temp123
 ---
 **Running the Service**
 
