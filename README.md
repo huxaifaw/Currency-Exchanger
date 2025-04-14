@@ -1,3 +1,5 @@
+**ExchangeRate-API Integration**
+
 - I have used Pair **ExchangeRate-API** endpoint in my code for getting the conversion rate from base currency to target currency.
 - API documentation url: https://www.exchangerate-api.com/docs/pair-conversion-requests
 ---
@@ -60,7 +62,7 @@ curl --location 'http://localhost:8080/api/calculate' \
 ---
 **UML Diagram**
 
-- https://github.com/huxaifaw/Currency-Exchanger/blob/main/UML-Diagram.png
+- 
 ---
 **Running the Service**
 
